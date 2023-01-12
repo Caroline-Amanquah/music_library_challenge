@@ -19,6 +19,7 @@ RSpec.describe Application do
       expect(response.body).to eq "Pixies, ABBA, Taylor Swift, Nina Simone"
     end
   end  
+  
   context 'POST /artists' do 
     it 'creates new artist' do 
       response = post('/artists',

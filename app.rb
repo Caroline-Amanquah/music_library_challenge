@@ -47,6 +47,7 @@ class Application < Sinatra::Base
 
     return response
   end
+
   post '/artists' do 
     repo = ArtistRepository.new
     new_artist = Artist.new
@@ -55,8 +56,6 @@ class Application < Sinatra::Base
 
     repo.create(new_artist)
 
-    return ''
+    return 'Wild nothing'
   end 
 end 
-  
-  
