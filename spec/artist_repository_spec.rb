@@ -29,4 +29,17 @@ describe ArtistRepository do
     expect(artist.id).to eq(3)
     expect(artist.name).to eq('Taylor Swift')
   end
+
+  it 'creates a new artist' do
+    repo = ArtistRepository.new
+
+    artist = Artist.new
+    artist.name = 'Wild nothing'
+    artist.genre = 'Indie'
+    repo.create(artist)
+    artists = repo.all
+
+    expect(artists.length).to eq(5)
+    expect(artists.last.name).to eq('Wild nothing')
+  end
 end
